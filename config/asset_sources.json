@@ -1,0 +1,67 @@
+{
+  "_aide": "Configuration des bibliothèques de l'usine Noury. Détails : docs/LICENCES_PAR_SITE.md et docs/BIBLIOTHEQUES_GRATUITES.md",
+
+  "licences": {
+    "_aide": "CC0 / domaine public est toujours accepté. Les licences NC (pas d'usage commercial) et ND (pas de modification) sont TOUJOURS refusées, quel que soit ce réglage.",
+    "attribution": false,
+    "_attribution": "true = accepter CC-BY (auteur cité automatiquement dans la description YouTube). La variable GitHub NOURY_ALLOW_CCBY=1 force aussi ce réglage.",
+    "share_alike": false,
+    "_share_alike": "true = accepter CC-BY-SA. Déconseillé : la vidéo pourrait devoir être publiée sous la même licence.",
+    "restricted": true,
+    "_restricted": "true = accepter les licences 'usage libre mais pas de redistribution' (BlendKit Royalty Free, Quaternius QAL, Fab Standard, CGTrader Royalty Free). Elles ne sont utilisées QUE si le secret NOURY_ARTIFACT_KEY existe : les fichiers restent alors chiffrés."
+  },
+
+  "sources": {
+    "polyhaven":  {"enabled": true,  "type": "ciels HDRI + textures", "key": null},
+    "ambientcg":  {"enabled": true,  "type": "textures", "key": null},
+    "polypizza":  {"enabled": true,  "type": "modèles 3D low poly", "key": "POLYPIZZA_API_KEY", "max_per_family": null},
+    "sketchfab":  {"enabled": true,  "type": "modèles 3D", "key": "SKETCHFAB_API_TOKEN", "max_per_family": null},
+    "blendkit":   {"enabled": true,  "type": "modèles 3D .blend", "key": "BLENDKIT_API_KEY", "max_per_family": null},
+    "objaverse":  {"enabled": true,  "type": "modèles 3D (800 000 objets Creative Commons)", "key": null, "max_per_family": 2,
+                   "max_new_shards": 3,
+                   "_aide": "Pas de clé. La première fois, télécharge un index (quelques dizaines de Mo, gardé en cache)."},
+    "packs":      {"enabled": true,  "type": "packs complets (Kenney, Quaternius...) par lien direct", "key": null},
+    "freesound":  {"enabled": true,  "type": "sons", "key": "FREESOUND_API_KEY"},
+    "manual":     {"enabled": true,  "type": "fichiers déposés à la main dans assets/manual/", "key": null}
+  },
+
+  "packs": [
+    {
+      "_aide": "Exemple : colle le lien de téléchargement du .zip affiché sur la page du pack, puis passe enabled à true.",
+      "enabled": false,
+      "name": "Kenney - Nature Kit",
+      "page": "https://kenney.nl/assets/nature-kit",
+      "url": "",
+      "licence": "CC0",
+      "credit": "Kenney (kenney.nl)",
+      "families": {
+        "tree": ["*tree_default*", "*tree_oak*", "*tree_fat*"],
+        "pine": ["*tree_pine*"],
+        "palm": ["*tree_palm*"],
+        "bush": ["*plant_bush*"],
+        "mushroom": ["*mushroom*"],
+        "rock": ["*rock_large*", "*rock_tall*"],
+        "flower": ["*flower_*"]
+      }
+    },
+    {
+      "enabled": false,
+      "name": "Kenney - Holiday Kit",
+      "page": "https://kenney.nl/assets/holiday-kit",
+      "url": "",
+      "licence": "CC0",
+      "credit": "Kenney (kenney.nl)",
+      "families": {"snowman": ["*snowman*"], "pine": ["*tree*snow*"]}
+    },
+    {
+      "_aide": "Quaternius utilise désormais sa propre licence (QAL) : usage commercial libre, mais redistribution interdite. Il faut donc NOURY_ARTIFACT_KEY.",
+      "enabled": false,
+      "name": "Quaternius - Stylized Nature MegaKit",
+      "page": "https://quaternius.com/",
+      "url": "",
+      "licence": "QAL",
+      "credit": "Quaternius (quaternius.com)",
+      "families": {"tree": ["*Tree*"], "bush": ["*Bush*"], "rock": ["*Rock*"], "flower": ["*Flower*"], "mushroom": ["*Mushroom*"]}
+    }
+  ]
+}
